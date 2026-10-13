@@ -1,0 +1,779 @@
+Analysis & Synthesis report for microCPU
+Tue Oct 13 14:55:02 2026
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for memoria:inst6|LPM_ROM:inst|altrom:srom|altsyncram:rom_block|altsyncram_sl61:auto_generated
+ 13. Parameter Settings for User Entity Instance: debouncer:inst2
+ 14. Parameter Settings for User Entity Instance: ULA:inst|BUSMUX:inst8
+ 15. Parameter Settings for User Entity Instance: ULA:inst|BUSMUX:inst6
+ 16. Parameter Settings for User Entity Instance: ULA:inst|BUSMUX:inst7
+ 17. Parameter Settings for User Entity Instance: memoria:inst6|LPM_ROM:inst
+ 18. Parameter Settings for User Entity Instance: BUSMUX:inst53
+ 19. Parameter Settings for User Entity Instance: BUSMUX:inst51
+ 20. Parameter Settings for User Entity Instance: BUSMUX:inst56
+ 21. Parameter Settings for User Entity Instance: BUSMUX:inst54
+ 22. Parameter Settings for User Entity Instance: BUSMUX:inst75
+ 23. Parameter Settings for User Entity Instance: BUSMUX:inst73
+ 24. Parameter Settings for User Entity Instance: BUSMUX:inst17
+ 25. Parameter Settings for User Entity Instance: BUSMUX:inst88
+ 26. Parameter Settings for User Entity Instance: BUSMUX:inst99
+ 27. Parameter Settings for User Entity Instance: BUSMUX:inst13
+ 28. Parameter Settings for User Entity Instance: BUSMUX:inst12
+ 29. Parameter Settings for User Entity Instance: BUSMUX:inst16
+ 30. Parameter Settings for User Entity Instance: BUSMUX:inst14
+ 31. Parameter Settings for User Entity Instance: BUSMUX:inst15
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++-----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                      ;
++---------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Oct 13 14:55:02 2026           ;
+; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                   ; microCPU                                        ;
+; Top-level Entity Name           ; microCPU                                        ;
+; Family                          ; Cyclone V                                       ;
+; Logic utilization (in ALMs)     ; N/A                                             ;
+; Total registers                 ; 19                                              ;
+; Total pins                      ; 45                                              ;
+; Total virtual pins              ; 0                                               ;
+; Total block memory bits         ; 1,024                                           ;
+; Total DSP Blocks                ; 0                                               ;
+; Total HSSI RX PCSs              ; 0                                               ;
+; Total HSSI PMA RX Deserializers ; 0                                               ;
+; Total HSSI TX PCSs              ; 0                                               ;
+; Total HSSI PMA TX Serializers   ; 0                                               ;
+; Total PLLs                      ; 0                                               ;
+; Total DLLs                      ; 0                                               ;
++---------------------------------+-------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; microCPU           ; microCPU           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
++----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------+---------+
+; microCPU.bdf                     ; yes             ; User Block Diagram/Schematic File        ; C:/Users/17929470/Desktop/microcpu/microCPU.bdf                                 ;         ;
+; contador3.v                      ; yes             ; User Verilog HDL File                    ; C:/Users/17929470/Desktop/microcpu/contador3.v                                  ;         ;
+; display.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/display.bdf                                  ;         ;
+; registrador.bdf                  ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/registrador.bdf                              ;         ;
+; debouncer.v                      ; yes             ; Auto-Found Verilog HDL File              ; C:/Users/17929470/Desktop/microcpu/debouncer.v                                  ;         ;
+; ula.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/ula.bdf                                      ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/busmux.tdf            ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.tdf           ;         ;
+; aglobal241.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc        ;         ;
+; muxlut.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/muxlut.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mux_sjc.tdf                   ; yes             ; Auto-Generated Megafunction              ; C:/Users/17929470/Desktop/microcpu/db/mux_sjc.tdf                               ;         ;
+; aula06.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/aula06.bdf                                   ;         ;
+; aula05.bdf                       ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/aula05.bdf                                   ;         ;
+; subtrator2.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/subtrator2.bdf                               ;         ;
+; fullsubtractor.bdf               ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/fullsubtractor.bdf                           ;         ;
+; mult.bdf                         ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/mult.bdf                                     ;         ;
+; adder7bits.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/adder7bits.bdf                               ;         ;
+; adder.bdf                        ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/adder.bdf                                    ;         ;
+; adder6bits.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/adder6bits.bdf                               ;         ;
+; adder5bits.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/adder5bits.bdf                               ;         ;
+; fullmult.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/fullmult.bdf                                 ;         ;
+; divisor.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/divisor.bdf                                  ;         ;
+; circuitodivisor.bdf              ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/circuitodivisor.bdf                          ;         ;
+; csm.bdf                          ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/csm.bdf                                      ;         ;
+; memoria.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/17929470/Desktop/microcpu/memoria.bdf                                  ;         ;
+; lpm_rom.tdf                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altrom.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.tdf            ;         ;
+; memmodes.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/others/maxplus2/memmodes.inc        ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; altsyncram.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.inc        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altram.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_sl61.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/17929470/Desktop/microcpu/db/altsyncram_sl61.tdf                       ;         ;
+; microcpu.mif                     ; yes             ; Auto-Found Memory Initialization File    ; C:/Users/17929470/Desktop/microcpu/microcpu.mif                                 ;         ;
++----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 67             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 110            ;
+;     -- 7 input functions                    ; 2              ;
+;     -- 6 input functions                    ; 20             ;
+;     -- 5 input functions                    ; 23             ;
+;     -- 4 input functions                    ; 49             ;
+;     -- <=3 input functions                  ; 16             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 19             ;
+;                                             ;                ;
+; I/O pins                                    ; 45             ;
+; Total MLAB memory bits                      ; 0              ;
+; Total block memory bits                     ; 1024           ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; BOTAO_U7~input ;
+; Maximum fan-out                             ; 35             ;
+; Total fan-out                               ; 747            ;
+; Average fan-out                             ; 3.18           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                              ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |microCPU                                       ; 110 (12)            ; 19 (1)                    ; 1024              ; 0          ; 45   ; 0            ; |microCPU                                                                                            ; microCPU        ; work         ;
+;    |ULA:inst|                                   ; 35 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst                                                                                   ; ULA             ; work         ;
+;       |aula06:inst|                             ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|aula06:inst                                                                       ; aula06          ; work         ;
+;          |aula05:inst4|                         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|aula06:inst|aula05:inst4                                                          ; aula05          ; work         ;
+;          |aula05:inst5|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|aula06:inst|aula05:inst5                                                          ; aula05          ; work         ;
+;          |aula05:inst6|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|aula06:inst|aula05:inst6                                                          ; aula05          ; work         ;
+;       |busmux:inst8|                            ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|busmux:inst8                                                                      ; busmux          ; work         ;
+;          |lpm_mux:$00000|                       ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|busmux:inst8|lpm_mux:$00000                                                       ; lpm_mux         ; work         ;
+;             |mux_sjc:auto_generated|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|busmux:inst8|lpm_mux:$00000|mux_sjc:auto_generated                                ; mux_sjc         ; work         ;
+;       |divisor:inst4|                           ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4                                                                     ; divisor         ; work         ;
+;          |circuitodivisor:inst77|               ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77                                              ; circuitodivisor ; work         ;
+;             |csm:csm50|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm50                                    ; csm             ; work         ;
+;             |csm:csm51|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm51                                    ; csm             ; work         ;
+;             |csm:csm53|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm53                                    ; csm             ; work         ;
+;             |csm:csm54|                         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm54                                    ; csm             ; work         ;
+;                |fullsubtractor:inst|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm54|fullsubtractor:inst                ; fullsubtractor  ; work         ;
+;             |csm:csm60|                         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm60                                    ; csm             ; work         ;
+;                |fullsubtractor:inst|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm60|fullsubtractor:inst                ; fullsubtractor  ; work         ;
+;             |csm:csm64|                         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm64                                    ; csm             ; work         ;
+;                |fullsubtractor:inst|            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm64|fullsubtractor:inst                ; fullsubtractor  ; work         ;
+;             |csm:csm70|                         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm70                                    ; csm             ; work         ;
+;                |fullsubtractor:inst|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm70|fullsubtractor:inst                ; fullsubtractor  ; work         ;
+;             |csm:csm72|                         ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm72                                    ; csm             ; work         ;
+;                |fullsubtractor:inst|            ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm72|fullsubtractor:inst                ; fullsubtractor  ; work         ;
+;             |csm:csm74|                         ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm74                                    ; csm             ; work         ;
+;                |fullsubtractor:inst|            ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm74|fullsubtractor:inst                ; fullsubtractor  ; work         ;
+;       |mult:inst3|                              ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3                                                                        ; mult            ; work         ;
+;          |adder5bits:inst13|                    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3|adder5bits:inst13                                                      ; adder5bits      ; work         ;
+;             |adder:inst3|                       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3|adder5bits:inst13|adder:inst3                                          ; adder           ; work         ;
+;          |adder6bits:inst15|                    ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3|adder6bits:inst15                                                      ; adder6bits      ; work         ;
+;             |adder:inst2|                       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3|adder6bits:inst15|adder:inst2                                          ; adder           ; work         ;
+;          |adder7bits:inst17|                    ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3|adder7bits:inst17                                                      ; adder7bits      ; work         ;
+;             |adder:inst3|                       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|mult:inst3|adder7bits:inst17|adder:inst3                                          ; adder           ; work         ;
+;       |subtrator2:inst2|                        ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|subtrator2:inst2                                                                  ; subtrator2      ; work         ;
+;          |fullsubtractor:inst4|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|subtrator2:inst2|fullsubtractor:inst4                                             ; fullsubtractor  ; work         ;
+;          |fullsubtractor:inst5|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|subtrator2:inst2|fullsubtractor:inst5                                             ; fullsubtractor  ; work         ;
+;          |fullsubtractor:inst6|                 ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|ULA:inst|subtrator2:inst2|fullsubtractor:inst6                                             ; fullsubtractor  ; work         ;
+;    |busmux:inst12|                              ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst12                                                                              ; busmux          ; work         ;
+;       |lpm_mux:$00000|                          ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst12|lpm_mux:$00000                                                               ; lpm_mux         ; work         ;
+;          |mux_sjc:auto_generated|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst12|lpm_mux:$00000|mux_sjc:auto_generated                                        ; mux_sjc         ; work         ;
+;    |busmux:inst16|                              ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst16                                                                              ; busmux          ; work         ;
+;       |lpm_mux:$00000|                          ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst16|lpm_mux:$00000                                                               ; lpm_mux         ; work         ;
+;          |mux_sjc:auto_generated|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst16|lpm_mux:$00000|mux_sjc:auto_generated                                        ; mux_sjc         ; work         ;
+;    |busmux:inst17|                              ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst17                                                                              ; busmux          ; work         ;
+;       |lpm_mux:$00000|                          ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst17|lpm_mux:$00000                                                               ; lpm_mux         ; work         ;
+;          |mux_sjc:auto_generated|               ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst17|lpm_mux:$00000|mux_sjc:auto_generated                                        ; mux_sjc         ; work         ;
+;    |busmux:inst53|                              ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst53                                                                              ; busmux          ; work         ;
+;       |lpm_mux:$00000|                          ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst53|lpm_mux:$00000                                                               ; lpm_mux         ; work         ;
+;          |mux_sjc:auto_generated|               ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|busmux:inst53|lpm_mux:$00000|mux_sjc:auto_generated                                        ; mux_sjc         ; work         ;
+;    |contajump:inst24|                           ; 7 (7)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|contajump:inst24                                                                           ; contajump       ; work         ;
+;    |display:inst1|                              ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|display:inst1                                                                              ; display         ; work         ;
+;    |display:inst5|                              ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|display:inst5                                                                              ; display         ; work         ;
+;    |display:inst67|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|display:inst67                                                                             ; display         ; work         ;
+;    |display:inst89|                             ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|display:inst89                                                                             ; display         ; work         ;
+;    |display:inst92|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|display:inst92                                                                             ; display         ; work         ;
+;    |display:inst9|                              ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|display:inst9                                                                              ; display         ; work         ;
+;    |memoria:inst6|                              ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |microCPU|memoria:inst6                                                                              ; memoria         ; work         ;
+;       |lpm_rom:inst|                            ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |microCPU|memoria:inst6|lpm_rom:inst                                                                 ; lpm_rom         ; work         ;
+;          |altrom:srom|                          ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |microCPU|memoria:inst6|lpm_rom:inst|altrom:srom                                                     ; altrom          ; work         ;
+;             |altsyncram:rom_block|              ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |microCPU|memoria:inst6|lpm_rom:inst|altrom:srom|altsyncram:rom_block                                ; altsyncram      ; work         ;
+;                |altsyncram_sl61:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |microCPU|memoria:inst6|lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_sl61:auto_generated ; altsyncram_sl61 ; work         ;
+;    |registrador:inst81|                         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|registrador:inst81                                                                         ; registrador     ; work         ;
+;    |registrador:inst82|                         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|registrador:inst82                                                                         ; registrador     ; work         ;
+;    |registrador:inst83|                         ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |microCPU|registrador:inst83                                                                         ; registrador     ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
+; Name                                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
+; memoria:inst6|lpm_rom:inst|altrom:srom|altsyncram:rom_block|altsyncram_sl61:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 64           ; 16           ; --           ; --           ; 1024 ; microcpu.mif ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+--------------+
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; debouncer:inst2|counter[0]             ; Stuck at GND due to stuck port clear ;
+; debouncer:inst2|intermediate           ; Stuck at VCC due to stuck port aload ;
+; debouncer:inst2|outb                   ; Stuck at VCC due to stuck port aload ;
+; debouncer:inst2|counter[1..15]         ; Stuck at GND due to stuck port clear ;
+; Total Number of Removed Registers = 18 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 19    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 13    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |microCPU|busmux:inst16|lpm_mux:$00000|mux_sjc:auto_generated|l1_w1_n0_mux_dataout ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |microCPU|busmux:inst17|lpm_mux:$00000|mux_sjc:auto_generated|l1_w0_n0_mux_dataout ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for memoria:inst6|LPM_ROM:inst|altrom:srom|altsyncram:rom_block|altsyncram_sl61:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:inst2 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; DELAY_BITS     ; 16    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:inst|BUSMUX:inst8 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                   ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:inst|BUSMUX:inst6 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                   ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:inst|BUSMUX:inst7 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; WIDTH          ; 4     ; Untyped                                   ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria:inst6|LPM_ROM:inst ;
++------------------------+--------------+---------------------------------+
+; Parameter Name         ; Value        ; Type                            ;
++------------------------+--------------+---------------------------------+
+; LPM_WIDTH              ; 16           ; Untyped                         ;
+; LPM_WIDTHAD            ; 6            ; Untyped                         ;
+; LPM_NUMWORDS           ; 64           ; Untyped                         ;
+; LPM_ADDRESS_CONTROL    ; UNREGISTERED ; Untyped                         ;
+; LPM_OUTDATA            ; REGISTERED   ; Untyped                         ;
+; LPM_FILE               ; microcpu.mif ; Untyped                         ;
+; DEVICE_FAMILY          ; Cyclone V    ; Untyped                         ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                  ;
++------------------------+--------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst53 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst51 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst56 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst54 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst75 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst73 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst17 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst88 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst99 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst13 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst12 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst16 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst14 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst15 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 4     ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 19                          ;
+;     ENA CLR           ; 13                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 112                         ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 110                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 49                          ;
+;         5 data inputs ; 23                          ;
+;         6 data inputs ; 20                          ;
+; boundary_port         ; 45                          ;
+; stratixv_ram_block    ; 16                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.50                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Tue Oct 13 14:54:55 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off microCPU -c microCPU
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file microcpu.bdf
+    Info (12023): Found entity 1: microCPU
+Info (12021): Found 1 design units, including 1 entities, in source file contador3.v
+    Info (12023): Found entity 1: contajump File: C:/Users/17929470/Desktop/microcpu/contador3.v Line: 1
+Info (12127): Elaborating entity "microCPU" for the top level hierarchy
+Warning (275011): Block or symbol "registrador" of instance "inst81" overlaps another block or symbol
+Warning (275011): Block or symbol "registrador" of instance "inst83" overlaps another block or symbol
+Warning (12125): Using design file display.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: display
+Info (12128): Elaborating entity "display" for hierarchy "display:inst5"
+Warning (12125): Using design file registrador.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: registrador
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:inst81"
+Warning (12125): Using design file debouncer.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: debouncer File: C:/Users/17929470/Desktop/microcpu/debouncer.v Line: 28
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:inst2"
+Warning (10230): Verilog HDL assignment warning at debouncer.v(71): truncated value with size 32 to match size of target (16) File: C:/Users/17929470/Desktop/microcpu/debouncer.v Line: 71
+Warning (12125): Using design file ula.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ULA
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:inst"
+Warning (275080): Converted elements in bus name "res" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "res[0]" to "res0"
+    Warning (275081): Converted element name(s) from "res[3..0]" to "res3..0"
+    Warning (275081): Converted element name(s) from "res[1]" to "res1"
+    Warning (275081): Converted element name(s) from "res[2]" to "res2"
+    Warning (275081): Converted element name(s) from "res[3]" to "res3"
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "ULA:inst|BUSMUX:inst8"
+Info (12130): Elaborated megafunction instantiation "ULA:inst|BUSMUX:inst8"
+Info (12133): Instantiated megafunction "ULA:inst|BUSMUX:inst8" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "4"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "ULA:inst|BUSMUX:inst8|lpm_mux:$00000" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12131): Elaborated megafunction instantiation "ULA:inst|BUSMUX:inst8|lpm_mux:$00000", which is child of megafunction instantiation "ULA:inst|BUSMUX:inst8" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/busmux.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_sjc.tdf
+    Info (12023): Found entity 1: mux_sjc File: C:/Users/17929470/Desktop/microcpu/db/mux_sjc.tdf Line: 23
+Info (12128): Elaborating entity "mux_sjc" for hierarchy "ULA:inst|BUSMUX:inst8|lpm_mux:$00000|mux_sjc:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.tdf Line: 87
+Warning (12125): Using design file aula06.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: aula06
+Info (12128): Elaborating entity "aula06" for hierarchy "ULA:inst|aula06:inst"
+Warning (12125): Using design file aula05.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: aula05
+Info (12128): Elaborating entity "aula05" for hierarchy "ULA:inst|aula06:inst|aula05:inst7"
+Warning (12125): Using design file subtrator2.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: subtrator2
+Info (12128): Elaborating entity "subtrator2" for hierarchy "ULA:inst|subtrator2:inst2"
+Warning (12125): Using design file fullsubtractor.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: fullsubtractor
+Info (12128): Elaborating entity "fullsubtractor" for hierarchy "ULA:inst|subtrator2:inst2|fullsubtractor:inst0"
+Warning (12125): Using design file mult.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: mult
+Info (12128): Elaborating entity "mult" for hierarchy "ULA:inst|mult:inst3"
+Warning (12125): Using design file adder7bits.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: adder7bits
+Info (12128): Elaborating entity "adder7bits" for hierarchy "ULA:inst|mult:inst3|adder7bits:inst17"
+Warning (12125): Using design file adder.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: adder
+Info (12128): Elaborating entity "adder" for hierarchy "ULA:inst|mult:inst3|adder7bits:inst17|adder:inst"
+Warning (12125): Using design file adder6bits.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: adder6bits
+Info (12128): Elaborating entity "adder6bits" for hierarchy "ULA:inst|mult:inst3|adder6bits:inst15"
+Warning (12125): Using design file adder5bits.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: adder5bits
+Info (12128): Elaborating entity "adder5bits" for hierarchy "ULA:inst|mult:inst3|adder5bits:inst13"
+Warning (12125): Using design file fullmult.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: fullMult
+Info (12128): Elaborating entity "fullMult" for hierarchy "ULA:inst|mult:inst3|fullMult:inst12"
+Warning (12125): Using design file divisor.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: divisor
+Info (12128): Elaborating entity "divisor" for hierarchy "ULA:inst|divisor:inst4"
+Warning (12125): Using design file circuitodivisor.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: circuitodivisor
+Info (12128): Elaborating entity "circuitodivisor" for hierarchy "ULA:inst|divisor:inst4|circuitodivisor:inst77"
+Warning (275008): Primitive "GND" of instance "inst88" not used
+Warning (275008): Primitive "GND" of instance "inst99" not used
+Warning (12125): Using design file csm.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: csm
+Info (12128): Elaborating entity "csm" for hierarchy "ULA:inst|divisor:inst4|circuitodivisor:inst77|csm:csm70"
+Warning (12125): Using design file memoria.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: memoria
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:inst6"
+Warning (275006): Can't find a definition for parameter LPM_FILE -- assuming microcpu.mif was intended to be a quoted string
+Info (12128): Elaborating entity "LPM_ROM" for hierarchy "memoria:inst6|LPM_ROM:inst"
+Info (12130): Elaborated megafunction instantiation "memoria:inst6|LPM_ROM:inst"
+Info (12133): Instantiated megafunction "memoria:inst6|LPM_ROM:inst" with the following parameter:
+    Info (12134): Parameter "LPM_ADDRESS_CONTROL" = "UNREGISTERED"
+    Info (12134): Parameter "LPM_FILE" = "microcpu.mif"
+    Info (12134): Parameter "LPM_OUTDATA" = "REGISTERED"
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_WIDTHAD" = "6"
+Info (12128): Elaborating entity "altrom" for hierarchy "memoria:inst6|LPM_ROM:inst|altrom:srom" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 61
+Warning (287001): Assertion warning: Can't convert ROM for Cyclone V device family using altsyncram megafunction -- implementing ROM using benchmarking mode by moving output registers to the input side. Power-up states and behavior may be different. File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.tdf Line: 177
+Info (287000): Assertion information: Clocko port is used as clock for the address input port File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.tdf Line: 253
+Info (12131): Elaborated megafunction instantiation "memoria:inst6|LPM_ROM:inst|altrom:srom", which is child of megafunction instantiation "memoria:inst6|LPM_ROM:inst" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "memoria:inst6|LPM_ROM:inst|altrom:srom|altsyncram:rom_block" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.tdf Line: 103
+Info (12131): Elaborated megafunction instantiation "memoria:inst6|LPM_ROM:inst|altrom:srom|altsyncram:rom_block", which is child of megafunction instantiation "memoria:inst6|LPM_ROM:inst" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.tdf Line: 103
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sl61.tdf
+    Info (12023): Found entity 1: altsyncram_sl61 File: C:/Users/17929470/Desktop/microcpu/db/altsyncram_sl61.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_sl61" for hierarchy "memoria:inst6|LPM_ROM:inst|altrom:srom|altsyncram:rom_block|altsyncram_sl61:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "contajump" for hierarchy "contajump:inst24"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[15]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[14]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[13]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[12]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[11]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[10]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[9]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[8]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[7]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[6]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[5]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[4]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[3]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[2]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[1]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+    Warning (13049): Converted tri-state buffer "memoria:inst6|lpm_rom:inst|otri[0]" feeding internal logic into a wire File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_rom.tdf Line: 68
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "s8" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_PLACA_M9"
+Info (21057): Implemented 183 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 43 output pins
+    Info (21061): Implemented 122 logic cells
+    Info (21064): Implemented 16 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Tue Oct 13 14:55:02 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:14
+
+

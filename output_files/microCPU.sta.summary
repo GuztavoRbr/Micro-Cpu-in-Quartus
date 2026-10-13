@@ -1,0 +1,85 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'BOTAO_U7'
+Slack : -7.957
+TNS   : -156.853
+
+Type  : Slow 1100mV 85C Model Hold 'BOTAO_U7'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'BOTAO_U7'
+Slack : -4.387
+TNS   : -68.924
+
+Type  : Slow 1100mV 85C Model Removal 'BOTAO_U7'
+Slack : 2.835
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'BOTAO_U7'
+Slack : -2.636
+TNS   : -53.125
+
+Type  : Slow 1100mV 0C Model Setup 'BOTAO_U7'
+Slack : -8.056
+TNS   : -158.543
+
+Type  : Slow 1100mV 0C Model Hold 'BOTAO_U7'
+Slack : 0.421
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'BOTAO_U7'
+Slack : -4.391
+TNS   : -69.127
+
+Type  : Slow 1100mV 0C Model Removal 'BOTAO_U7'
+Slack : 2.795
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'BOTAO_U7'
+Slack : -2.636
+TNS   : -50.634
+
+Type  : Fast 1100mV 85C Model Setup 'BOTAO_U7'
+Slack : -4.110
+TNS   : -80.289
+
+Type  : Fast 1100mV 85C Model Hold 'BOTAO_U7'
+Slack : 0.184
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'BOTAO_U7'
+Slack : -2.390
+TNS   : -37.493
+
+Type  : Fast 1100mV 85C Model Removal 'BOTAO_U7'
+Slack : 2.092
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'BOTAO_U7'
+Slack : -2.174
+TNS   : -34.874
+
+Type  : Fast 1100mV 0C Model Setup 'BOTAO_U7'
+Slack : -3.868
+TNS   : -75.639
+
+Type  : Fast 1100mV 0C Model Hold 'BOTAO_U7'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'BOTAO_U7'
+Slack : -2.263
+TNS   : -35.575
+
+Type  : Fast 1100mV 0C Model Removal 'BOTAO_U7'
+Slack : 2.036
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'BOTAO_U7'
+Slack : -2.174
+TNS   : -33.071
+
+------------------------------------------------------------
