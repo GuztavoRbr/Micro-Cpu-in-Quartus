@@ -1,0 +1,65 @@
+Palavras de memória
+0000000000000000
+
+ADD 0000
+SUB 0001
+MUL 0010
+DIV 0011
+JMP 0100
+JE 0101
+JZ 0110
+CMP 0111
+RST 1100
+MOV 1111
+
+Complemento
+
+operações 00SS:
+	constante+constante 00
+	reg+reg 11
+	const+reg 01
+	reg+const 10
+
+	
+
+	00|00 00|00 00
+	lixo|reg1 lixo|reg2 regfinal
+	ou
+	constante lixo|reg
+	lixo|reg costante
+	constante constante
+
+	complemento:
+		CC: valor próprio
+		CR: valor próprio + 2 bits que indicam o reg
+		RR: 2 bits do primeiro + 2 bits do segundo
+	
+	registradores:
+		A: 00
+		B: 10
+		C: 01
+		cte: 11
+
+operações 01:
+	comp (11): se rx E ry iguais, retorne 1
+		000000lixo|00r|00r|00lixo
+	jump normal (00): 6 bits de endereço, o resto e lixo
+		000000end|000000lixo
+	jump equal (01): se comp, jump normal com o registrador
+		000000end|000000lixo
+	jump z (10): jumpa se o registrador é zero
+		000000end|00r|0000lixo
+
+operações 11:
+	RST (00): reseta os registradores e o contador
+		obrigatoriamente 0 em [4,9]
+11000000000000000
+
+
+MOV: r1 e r2
+soma do registrador X com a constante 0, armazenando no registrador Y
+00001000XX0000YY
+
+
+0000
+		
